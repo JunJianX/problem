@@ -30,3 +30,18 @@ bw=( unsigned char ) ( bw>>1 );
 write24c02 ( 0x00 ,  ( unsigned char  )  ( bw+1 )  );  
   
 格式为：( unsigned char )（表达式）;如是16位的变量则不需要这样声明，   
+
+#使用#if defined()组成复杂的预编译控制指令  
+1. 综合运用#if、#defined()、#elif、#else和#endif来组成复杂的编译控制；  
+
+    `#if defined(COMBO_ENABLE) && !defined(PDU_ENABLE)`  
+    `/* COMBO configuration */`  
+    `#elif defined(PDU_ENABLE) && !defined(COMBO_ENABLE)`  
+    `/* PDU configuration */`  
+    `#else`  
+    `/* COMBO configuration is used */`  
+    `#endif`   
+2. #ifdef只能判断单一的宏是否定义，而#if defined()可以组成复杂的判别条件；  
+对于单一的宏AAA来说，#ifdef AAA和#if defined(AAA)是完全相同的。  
+而要组成复杂的判别条件，用#if defined()就灵活方便了，比如：#if defined(AAA) && (BBB >= 10)  
+如果改用#ifdef则没法表示条件BBB>=10了。  
