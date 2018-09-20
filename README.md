@@ -61,3 +61,8 @@ PA1不能作为外部中断使用。
 对于单一的宏AAA来说，#ifdef AAA和#if defined(AAA)是完全相同的。  
 而要组成复杂的判别条件，用#if defined()就灵活方便了，比如：#if defined(AAA) && (BBB >= 10)  
 如果改用#ifdef则没法表示条件BBB>=10了。  
+
+#keil编译时出现下面的警告  
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS  
+    SEGMENT: ?PR?REMOTE_TRANSMIT?RC  
+意思是名称为RC/rc/Rc/rC的C文件中的函数REMOTE_TRANSMIT（或小写）没有使用。
