@@ -47,7 +47,7 @@ Port E 口的8个引脚：PE[7:0]
 PD7 是最高优先级的中断源 (TLI)。  
 PA1不能作为外部中断使用。  
 
-#使用#if defined()组成复杂的预编译控制指令  
+ #使用#if defined()组成复杂的预编译控制指令  
 1. 综合运用#if、#defined()、#elif、#else和#endif来组成复杂的编译控制；  
 
     `#if defined(COMBO_ENABLE) && !defined(PDU_ENABLE)`  
@@ -62,7 +62,7 @@ PA1不能作为外部中断使用。
 而要组成复杂的判别条件，用#if defined()就灵活方便了，比如：#if defined(AAA) && (BBB >= 10)  
 如果改用#ifdef则没法表示条件BBB>=10了。  
 
-#keil编译时出现下面的警告  
+ #keil编译时出现下面的警告  
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS  
     SEGMENT: ?PR?REMOTE_TRANSMIT?RC  
 意思是名称为RC/rc/Rc/rC的C文件中的函数REMOTE_TRANSMIT（或小写）没有使用。
