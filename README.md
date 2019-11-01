@@ -77,3 +77,20 @@ MR。LIAO 2019/3/18 16:04:12
 接下拉会不会通信异常  
 HIT-Xu 2019/3/18 16:05:12  
 不会通信异常的，VDD 3V3正常供上电以后，就是3.3V了  
+
+## 将整形转换为字符串
+
+    char str[5];
+    void ConvertInt2Str(uint pAddr)
+    {
+      uchar i,t;
+      char hex[] = "0123456789ABCDEF";
+
+      for (i = 0; i < 2; ++i) //2代表pAddr为2个字节的整数
+      {
+        t=pAddr>>((1-i)*8);
+        str[2*i] = hex[t >> 4];
+        str[2*i+1] = hex[t & 0x0F];    
+      }
+      str[2*i] = '\0';
+    }
