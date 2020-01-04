@@ -94,3 +94,13 @@ HIT-Xu 2019/3/18 16:05:12
       }
       str[2*i] = '\0';
     }
+
+ #STVD调试不了  
+ 提示Failed to launch child process:<gdb.exe>  >error=2-"the system cannot find the file specified".
+ 
+ ##解决方法  
+ 1.在环境变量->Path中添加CXSTM8的路径，如C:\Program Files\COSMIC\CXSTM8，然后确定。  
+ 设置好后，还是发现只用使用管理员身份运行STVD才能调试。  
+ 2.找到stvdebug.exe，属性->运行兼容性疑难解答，设置为以管理员运行该程序。  
+ 此后，每次打开该软件，都会提示是否允许该程序修改系统。  
+ 
