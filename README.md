@@ -104,3 +104,8 @@ HIT-Xu 2019/3/18 16:05:12
  2.找到stvdebug.exe，属性->运行兼容性疑难解答，设置为以管理员运行该程序。  
  此后，每次打开该软件，都会提示是否允许该程序修改系统。  
  
+# STVD将某个文件转成库文件
+
+    clib -c $(OutputPath)filename.lib $(OutputPath)filename.o
+    clib -c $(OutputPath)filename.lib $(OutputPath)filename1.o $(OutputPath)filename2.o
+
